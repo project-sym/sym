@@ -1435,6 +1435,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@satorijs/element@npm:3.1.7, @satorijs/element@npm:^3.1.7":
+  version: 3.1.7
+  resolution: "@satorijs/element@npm:3.1.7"
+  dependencies:
+    cosmokit: "npm:^1.6.2"
+  checksum: 10c0/2157a3d6052bd25f7a09e6da8cf665b94016deb03a3d35ea2b984f8633e436a41f2d0cf0e2b294ee58e6af6c3b8ede389d634f86742b1bb31d5b468a95275b92
+  languageName: node
+  linkType: hard
+
+"@satorijs/protocol@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@satorijs/protocol@npm:1.6.0"
+  dependencies:
+    "@satorijs/element": "npm:^3.1.7"
+    cosmokit: "npm:^1.6.3"
+  checksum: 10c0/988bf84705a419d7338c30bb4458a1fadd0b6a0aa196c6bd96a3a6446317093ecae40af57a39210a76cf80dfb16287a21b986ce0e332a6cfc6662f7ea3ceae3d
+  languageName: node
+  linkType: hard
+
 "@sinclair/typebox@npm:^0.27.8":
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
@@ -1855,6 +1874,8 @@ __metadata:
   dependencies:
     "@chromatic-com/storybook": "npm:3.2.3"
     "@eslint/js": "npm:^9.17.0"
+    "@satorijs/element": "npm:3.1.7"
+    "@satorijs/protocol": "npm:1.6.0"
     "@storybook/addon-essentials": "npm:^8.5.0"
     "@storybook/addon-interactions": "npm:^8.5.0"
     "@storybook/addon-onboarding": "npm:^8.5.0"
@@ -3033,6 +3054,13 @@ __metadata:
   version: 2.0.0
   resolution: "convert-source-map@npm:2.0.0"
   checksum: 10c0/8f2f7a27a1a011cc6cc88cc4da2d7d0cfa5ee0369508baae3d98c260bb3ac520691464e5bbe4ae7cdf09860c1d69ecc6f70c63c6e7c7f7e3f18ec08484dc7d9b
+  languageName: node
+  linkType: hard
+
+"cosmokit@npm:^1.6.2, cosmokit@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "cosmokit@npm:1.6.3"
+  checksum: 10c0/c76e3408d5bc3728ee732f7452c3a34aaea33de36e1ee505ba7209b3c97fcf397f8e9a6aab9f88458b95d63ace6db00ff938662da087e54d1bf695dc9bdc7b5d
   languageName: node
   linkType: hard
 

@@ -12,6 +12,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@satorijs/element": "3.1.7",
+    "@satorijs/protocol": "1.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
