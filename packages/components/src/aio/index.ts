@@ -6,4 +6,4 @@ export * from './SymMsgContainer'
 export * from './SymMsgGroup'
 export * from './SymMsgVirtualList'
 
-export type * from './aioMsg'
+export * from './aioMsg'
