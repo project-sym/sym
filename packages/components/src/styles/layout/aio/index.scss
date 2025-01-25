@@ -3,5 +3,26 @@
     &-container {
       display: flex;
     }
+
+    &-bubble {
+      border-start-start-radius: var(
+        --sym-aio-msg-bubble-border-start-start-radius
+      );
+      border-start-end-radius: var(
+        --sym-aio-msg-bubble-border-start-end-radius
+      );
+      border-end-start-radius: var(
+        --sym-aio-msg-bubble-border-end-start-radius
+      );
+      border-end-end-radius: var(--sym-aio-msg-bubble-border-end-end-radius);
+
+      background-color: var(--sym-aio-bubble-color);
+    }
+  }
+
+  &-avatar {
+    &-container {
+      width: var(--sym-aio-avatar-container-width);
+    }
   }
 }
