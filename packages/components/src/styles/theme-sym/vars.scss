@@ -1,3 +1,7 @@
 .sym-provider {
-  --sym-aio-bubble-color: red;
+  --sym-aio-bubble-background: red;
+}
+
+.sym-provider.sym-dark {
+  --sym-aio-bubble-background: red;
 }
