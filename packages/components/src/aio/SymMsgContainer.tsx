@@ -13,7 +13,7 @@ export const SymMsgContainer = ({ children }: SymMsgContainerProps) => {
 
   return (
     <div className="sym-aio-msg-container">
-      <div className="sym-aio-msg-gutter" />
+      <div className="sym-aio-msg-gutter-container" />
       {msgGroup.group ? (
         <div className="sym-aio-avatar-placeholder" />
       ) : (
