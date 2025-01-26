@@ -19,30 +19,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const StoryBasic = () => {
-  const [messages, setMessages] = useState<SymAioMsg[]>([])
-
-  useEffect(() => {
-    setMessages([
-      {
-        elements: [h.text('Hello World 1')],
-        symHeader: 'Il Harper',
-      },
-      {
-        elements: [
-          h('img', {
-            src: imgSrc,
-          }),
-        ],
-        symHeader: 'Il Harper',
-      },
-      {
-        elements: [h.text(longText)],
-        symHeader: 'Il Harper',
-      },
-    ])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <SymProvider>
       <SymAioHostContext
@@ -53,19 +29,35 @@ const StoryBasic = () => {
           },
         }}
       >
-        <SymAioCtxContext.Provider
+        <SymMsgGroupContext
           value={{
-            messages,
+            group: true,
           }}
         >
-          <SymMsgGroupContext
-            value={{
-              group: true,
-            }}
-          >
-            <SymMsgGroup />
-          </SymMsgGroupContext>
-        </SymAioCtxContext.Provider>
+          <SymMsgGroup
+            msgs={[
+              {
+                elements: [h.text('Hello World 1')],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+              {
+                elements: [
+                  h('img', {
+                    src: imgSrc,
+                  }),
+                ],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+              {
+                elements: [h.text(longText)],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+            ]}
+          />
+        </SymMsgGroupContext>
       </SymAioHostContext>
     </SymProvider>
   )
@@ -73,4 +65,55 @@ const StoryBasic = () => {
 
 export const Basic: Story = {
   render: () => <StoryBasic />,
+}
+
+const StoryFloat = () => {
+  return (
+    <SymProvider>
+      <SymAioHostContext
+        value={{
+          frCanRemoveBubble: () => false,
+          frRenderers: {
+            ...frRenderers,
+          },
+        }}
+      >
+        <SymMsgGroupContext
+          value={{
+            group: true,
+          }}
+        >
+          <SymMsgGroup
+            msgs={[
+              {
+                elements: [h.text('Hello Worldddddd')],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+              {
+                elements: [
+                  h.text('Hello Worlddddddddddddddddddddddddddddddddd'),
+                ],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+              {
+                elements: [
+                  h.text(
+                    'Hello Worlddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
+                  ),
+                ],
+                symHeader: 'Il Harper',
+                symFooter: '2 Replies | 2 Forwards | 2 Views | 12:00 AM',
+              },
+            ]}
+          />
+        </SymMsgGroupContext>
+      </SymAioHostContext>
+    </SymProvider>
+  )
+}
+
+export const Float: Story = {
+  render: () => <StoryFloat />,
 }
