@@ -4,6 +4,16 @@
       display: flex;
     }
 
+    &-header {
+      &-container {
+        font-size: 0.7rem;
+
+        margin: var(--sym-aio-avatar-margin)
+          var(--sym-aio-msg-header-container-margin) 0
+          var(--sym-aio-msg-header-container-margin);
+      }
+    }
+
     &-bubble {
       border-start-start-radius: var(
         --sym-aio-msg-bubble-border-start-start-radius

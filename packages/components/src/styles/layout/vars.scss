@@ -5,4 +5,11 @@
   --sym-aio-avatar-margin: calc(
     (var(--sym-aio-avatar-container-width) - var(--sym-aio-avatar-size)) / 2
   );
+
+  --sym-aio-msg-bubble-margin: 0px;
+  --sym-aio-msg-bubble-padding: 8px;
+
+  --sym-aio-msg-header-container-margin: calc(
+    var(--sym-aio-msg-bubble-margin) + var(--sym-aio-msg-bubble-padding)
+  );
 }
