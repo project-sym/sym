@@ -4,6 +4,10 @@
       display: flex;
     }
 
+    &-gutter {
+      width: var(--sym-aio-msg-gutter-width);
+    }
+
     &-header {
       &-container {
         font-size: 0.7rem;
