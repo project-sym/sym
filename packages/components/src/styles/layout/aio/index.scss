@@ -28,9 +28,42 @@
       word-break: break-all;
 
       &-container {
+        // BFC
+        position: relative;
+
         font-size: 0.9rem;
 
         max-width: var(--sym-aio-msg-content-max-width);
+      }
+    }
+
+    &-footer {
+      &-container {
+        visibility: visible;
+        position: absolute;
+
+        font-size: 0.7rem;
+        user-select: none;
+
+        right: 6px;
+        bottom: 4px;
+      }
+
+      &-pseudo-container {
+        float: right;
+
+        font-size: 0.7rem;
+        user-select: none;
+
+        margin-left: 18px;
+
+        visibility: hidden;
+      }
+
+      &-clearfix {
+        clear: both;
+        display: table;
+        user-select: none;
       }
     }
 

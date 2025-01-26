@@ -29,7 +29,18 @@ export const SymFR = ({}: SymFrProps) => {
 
   return (
     <SymMsgBubble>
-      <div className="sym-aio-msg-content">{result}</div>
+      <div className="sym-aio-msg-content">
+        {result}
+        {msg.symFooter && (
+          <>
+            <span className="sym-aio-msg-footer-pseudo-container">
+              {msg.symFooter}
+            </span>
+            <div className="sym-aio-msg-footer-container">{msg.symFooter}</div>
+            <span className="sym-aio-msg-footer-clearfix" />
+          </>
+        )}
+      </div>
     </SymMsgBubble>
   )
 }
