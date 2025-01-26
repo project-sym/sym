@@ -1,11 +1,8 @@
 .sym-provider {
-  --sym-aio-msg-bubble-background: red;
-  --sym-aio-avatar-background: red;
-  --sym-aio-avatar-color: green;
+  --sym-aio-msg-bubble-background: #00000010;
+  --sym-aio-avatar-background: #00000010;
+  --sym-aio-avatar-color: black;
 }
 
 .sym-provider.sym-dark {
-  --sym-aio-msg-bubble-background: red;
-  --sym-aio-avatar-background: red;
-  --sym-aio-avatar-color: green;
 }
