@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext } from 'react'
 import type { SymAioMsg } from './aioMsg'
 import type { SymFRRenderer } from './SymFR'
 
@@ -10,19 +10,6 @@ export interface SymAioHost {
 
 export interface SymAioCtx {
   messages: SymAioMsg[]
-  setMessages: (messages: SymAioMsg[]) => void
-}
-
-/**
- * @experimental
- */
-export const useSymAioState: () => SymAioCtx = () => {
-  const [messages, setMessages] = useState<SymAioMsg[]>([])
-
-  return {
-    messages,
-    setMessages,
-  }
 }
 
 export const SymAioHostContext = createContext<SymAioHost>(
