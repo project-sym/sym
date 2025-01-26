@@ -24,9 +24,14 @@ export const SymFR = ({}: SymFrProps) => {
 
   const result = render(frCtx, msg.elements)
 
-  if (aioHost.frCanRemoveBubble(result)) return result
+  if (aioHost.frCanRemoveBubble(result))
+    return <div className="sym-aio-msg-content">{result}</div>
 
-  return <SymMsgBubble children={result} />
+  return (
+    <SymMsgBubble>
+      <div className="sym-aio-msg-content">{result}</div>
+    </SymMsgBubble>
+  )
 }
 
 const EMPTY = ['[空消息]']
