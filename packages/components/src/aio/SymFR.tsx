@@ -55,7 +55,9 @@ export const frRenderers = {
   br: directRenderer,
   p: directRenderer,
   a: directRenderer,
-  img: directRenderer,
+  img: ((_frCtx, element) => [
+    <img {...element.attrs} className="sym-fr-img" />,
+  ]) satisfies SymFRRenderer as SymFRRenderer,
   audio: directRenderer,
 } as const
 
