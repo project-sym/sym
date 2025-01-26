@@ -8,10 +8,15 @@
     (var(--sym-aio-avatar-container-width) - var(--sym-aio-avatar-size)) / 2
   );
 
-  --sym-aio-msg-bubble-margin: 0px;
-  --sym-aio-msg-bubble-padding: 8px;
+  --sym-aio-msg-bubble-margin-left: 0px;
+  --sym-aio-msg-bubble-margin-bottom: 2px;
+  --sym-aio-msg-bubble-padding-top: 8px;
+  --sym-aio-msg-bubble-padding-right: 8px;
+  --sym-aio-msg-bubble-padding-bottom: 8px;
+  --sym-aio-msg-bubble-padding-left: 8px;
 
   --sym-aio-msg-header-container-margin: calc(
-    var(--sym-aio-msg-bubble-margin) + var(--sym-aio-msg-bubble-padding)
+    var(--sym-aio-msg-bubble-margin-left) +
+      var(--sym-aio-msg-bubble-padding-left)
   );
 }

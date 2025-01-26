@@ -5,7 +5,13 @@
     }
 
     &-gutter {
-      width: var(--sym-aio-msg-gutter-width);
+      &-container {
+        width: var(--sym-aio-msg-gutter-width);
+      }
+
+      &-placeholder {
+        width: var(--sym-aio-msg-gutter-width);
+      }
     }
 
     &-header {
@@ -27,8 +33,26 @@
     &-bubble {
       background: var(--sym-aio-msg-bubble-background);
 
-      margin: var(--sym-aio-msg-bubble-margin);
-      padding: var(--sym-aio-msg-bubble-padding);
+      margin-top: var(--sym-aio-msg-bubble-margin-top);
+      margin-right: var(--sym-aio-msg-bubble-margin-right);
+      margin-bottom: var(--sym-aio-msg-bubble-margin-bottom);
+      margin-left: var(--sym-aio-msg-bubble-margin-left);
+      padding-top: var(--sym-aio-msg-bubble-padding-top);
+      padding-right: var(--sym-aio-msg-bubble-padding-right);
+      padding-bottom: var(--sym-aio-msg-bubble-padding-bottom);
+      padding-left: var(--sym-aio-msg-bubble-padding-left);
+    }
+
+    &-group {
+      &-content {
+        position: absolute;
+      }
+
+      &-overlay {
+        &-container {
+          position: absolute;
+        }
+      }
     }
   }
 
