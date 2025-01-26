@@ -27,6 +27,8 @@
     &-content {
       &-container {
         font-size: 0.9rem;
+
+        max-width: var(--sym-aio-msg-content-max-width);
       }
     }
 
