@@ -7,16 +7,20 @@
     &-gutter {
       &-container {
         width: var(--sym-aio-msg-gutter-width);
+
+        pointer-events: all;
       }
 
       &-placeholder {
         width: var(--sym-aio-msg-gutter-width);
+
+        pointer-events: none;
       }
     }
 
     &-header {
       &-container {
-        font-size: 0.7rem;
+        font-size: var(--sym-aio-msg-header-font-size);
 
         margin: var(--sym-aio-avatar-margin)
           var(--sym-aio-msg-header-container-margin) 0
@@ -31,7 +35,7 @@
         // BFC
         position: relative;
 
-        font-size: 0.9rem;
+        font-size: var(--sym-aio-msg-content-font-size);
 
         max-width: var(--sym-aio-msg-content-max-width);
       }
@@ -42,7 +46,7 @@
         visibility: visible;
         position: absolute;
 
-        font-size: 0.7rem;
+        font-size: var(--sym-aio-msg-footer-font-size);
         user-select: none;
 
         right: 6px;
@@ -52,7 +56,7 @@
       &-pseudo-container {
         float: right;
 
-        font-size: 0.7rem;
+        font-size: var(--sym-aio-msg-footer-font-size);
         user-select: none;
 
         margin-left: 18px;
@@ -82,12 +86,28 @@
 
     &-group {
       &-content {
-        position: absolute;
+        // Should not use absolute to give group container a proper size
+        // position: absolute;
+
+        padding: 0 0 var(--sym-aio-avatar-margin) 0;
+      }
+
+      &-container {
+        // BFC
+        position: relative;
       }
 
       &-overlay {
         &-container {
           position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+
+          display: flex;
+
+          pointer-events: none;
         }
       }
     }
@@ -98,18 +118,28 @@
     height: var(--sym-aio-avatar-size);
     margin: var(--sym-aio-avatar-margin) 0;
 
+    position: sticky;
+    top: var(--sym-aio-avatar-margin);
+    bottom: var(--sym-aio-avatar-margin);
+
     background: var(--sym-aio-avatar-background);
 
     &-container {
       width: var(--sym-aio-avatar-container-width);
 
+      margin: var(--sym-aio-msg-header-font-size) 0;
+
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      pointer-events: all;
     }
 
     &-placeholder {
       width: var(--sym-aio-avatar-container-width);
+
+      pointer-events: none;
     }
   }
 }
