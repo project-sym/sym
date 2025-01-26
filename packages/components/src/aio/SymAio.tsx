@@ -10,12 +10,13 @@ export interface SymAioHost {
 
 export interface SymAioCtx {
   messages: SymAioMsg[]
+  setMessages: (messages: SymAioMsg[]) => void
 }
 
 /**
  * @experimental
  */
-export const useSymAioCtx: () => SymAioCtx = () => {
+export const useSymAioState: () => SymAioCtx = () => {
   const [messages, setMessages] = useState<SymAioMsg[]>([])
 
   return {
@@ -33,3 +34,5 @@ export const SymAioCtxContext = createContext<SymAioCtx>(
 )
 
 export const useSymAioHost = () => useContext(SymAioHostContext)
+
+export const useSymAioCtx = () => useContext(SymAioCtxContext)
