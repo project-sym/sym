@@ -7,6 +7,7 @@ import { SymAioCtxContext, SymAioHostContext } from './SymAio'
 import { frRenderers } from './SymFR'
 import { SymMsgGroup, SymMsgGroupContext } from './SymMsgGroup'
 import type { SymAioMsg } from './aioMsg'
+import { imgSrc, longText } from './storiesData'
 
 const meta = {
   component: SymMsgGroup,
@@ -27,7 +28,15 @@ const StoryBasic = () => {
         symHeader: 'Il Harper',
       },
       {
-        elements: [h.text('Hello World 2')],
+        elements: [
+          h('img', {
+            src: imgSrc,
+          }),
+        ],
+        symHeader: 'Il Harper',
+      },
+      {
+        elements: [h.text(longText)],
         symHeader: 'Il Harper',
       },
     ])

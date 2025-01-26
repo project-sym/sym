@@ -8,6 +8,7 @@ import { frRenderers } from './SymFR'
 import { SymMsg } from './SymMsg'
 import { SymMsgGroupContext } from './SymMsgGroup'
 import type { SymAioMsg } from './aioMsg'
+import { imgSrc, longText } from './storiesData'
 
 const meta = {
   component: SymMsg,
@@ -52,4 +53,80 @@ const StoryBasic = () => {
 
 export const Basic: Story = {
   render: () => <StoryBasic />,
+}
+
+const StoryLongText = () => {
+  const [messages] = useState<SymAioMsg[]>([])
+
+  return (
+    <SymProvider>
+      <SymAioHostContext
+        value={{
+          frCanRemoveBubble: () => false,
+          frRenderers: {
+            ...frRenderers,
+          },
+        }}
+      >
+        <SymAioCtxContext.Provider
+          value={{
+            messages,
+          }}
+        >
+          <SymMsgGroupContext value={{}}>
+            <SymMsg
+              msg={{
+                elements: [h.text(longText)],
+                symHeader: 'Il Harper',
+              }}
+            />
+          </SymMsgGroupContext>
+        </SymAioCtxContext.Provider>
+      </SymAioHostContext>
+    </SymProvider>
+  )
+}
+
+export const LongText: Story = {
+  render: () => <StoryLongText />,
+}
+
+const StoryImage = () => {
+  const [messages] = useState<SymAioMsg[]>([])
+
+  return (
+    <SymProvider>
+      <SymAioHostContext
+        value={{
+          frCanRemoveBubble: () => false,
+          frRenderers: {
+            ...frRenderers,
+          },
+        }}
+      >
+        <SymAioCtxContext.Provider
+          value={{
+            messages,
+          }}
+        >
+          <SymMsgGroupContext value={{}}>
+            <SymMsg
+              msg={{
+                elements: [
+                  h('img', {
+                    src: imgSrc,
+                  }),
+                ],
+                symHeader: 'Il Harper',
+              }}
+            />
+          </SymMsgGroupContext>
+        </SymAioCtxContext.Provider>
+      </SymAioHostContext>
+    </SymProvider>
+  )
+}
+
+export const Image: Story = {
+  render: () => <StoryImage />,
 }
