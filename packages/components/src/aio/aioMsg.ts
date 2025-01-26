@@ -4,6 +4,7 @@ import { createContext, useContext } from 'react'
 
 export interface SymAioMsg extends Omit<Message, 'messageId'> {
   symHeader?: ReactNode | null | undefined
+  symFooter?: ReactNode | null | undefined
 }
 
 export const SymMsgContext = createContext<SymAioMsg>(
