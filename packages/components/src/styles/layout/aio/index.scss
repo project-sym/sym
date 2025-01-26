@@ -21,8 +21,16 @@
   }
 
   &-avatar {
+    width: var(--sym-aio-avatar-size);
+    height: var(--sym-aio-avatar-size);
+    margin: var(--sym-aio-avatar-margin) 0;
+
     &-container {
       width: var(--sym-aio-avatar-container-width);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

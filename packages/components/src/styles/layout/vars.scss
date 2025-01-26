@@ -1,3 +1,8 @@
 .sym-provider {
   --sym-aio-avatar-container-width: 48px;
+  --sym-aio-avatar-size: 36px;
+
+  --sym-aio-avatar-margin: calc(
+    (var(--sym-aio-avatar-container-width) - var(--sym-aio-avatar-size)) / 2
+  );
 }

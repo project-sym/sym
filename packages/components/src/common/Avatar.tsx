@@ -1,9 +1,9 @@
 'use client'
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
 import { forwardRef } from 'react'
-import { clsx } from 'clsx'
 
 const Avatar = forwardRef<
   ComponentRef<typeof AvatarPrimitive.Root>,
