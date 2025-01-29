@@ -8,11 +8,15 @@
       &-container {
         width: var(--sym-aio-msg-gutter-width);
 
+        flex-shrink: 0;
+
         pointer-events: all;
       }
 
       &-placeholder {
         width: var(--sym-aio-msg-gutter-width);
+
+        flex-shrink: 0;
 
         pointer-events: none;
       }
@@ -128,6 +132,8 @@
     &-container {
       width: var(--sym-aio-avatar-container-width);
 
+      flex-shrink: 0;
+
       // Avatar margin-v will be sticky,
       // so container margin (= header font-size) first, then avatar margin-v.
       margin: var(--sym-aio-avatar-container-margin-top) 0 0 0;
@@ -141,6 +147,8 @@
 
     &-placeholder {
       width: var(--sym-aio-avatar-container-width);
+
+      flex-shrink: 0;
 
       // Already at the bottom layer
       // pointer-events: none;
