@@ -4,9 +4,13 @@
   --sym-aio-avatar-container-width: 48px;
   --sym-aio-avatar-size: 36px;
 
-  --sym-aio-avatar-margin: calc(
+  --sym-aio-avatar-margin-v: calc(
     (var(--sym-aio-avatar-container-width) - var(--sym-aio-avatar-size)) / 2
   );
+
+  // Avatar margin-v will be sticky,
+  // so container margin (= header font-size) first, then avatar margin-v.
+  --sym-aio-avatar-container-margin-top: var(--sym-aio-msg-header-font-size);
 
   --sym-aio-msg-bubble-margin-left: 0px;
   --sym-aio-msg-bubble-margin-bottom: 2px;
@@ -19,10 +23,14 @@
   --sym-aio-msg-content-font-size: 0.9rem;
   --sym-aio-msg-footer-font-size: 0.7rem;
 
-  --sym-aio-msg-header-container-margin: calc(
+  --sym-aio-msg-header-container-margin-top: var(--sym-aio-avatar-margin-v);
+  --sym-aio-msg-header-container-margin-h: calc(
     var(--sym-aio-msg-bubble-margin-left) +
       var(--sym-aio-msg-bubble-padding-left)
   );
 
   --sym-aio-msg-content-max-width: min(90vw, 600px);
+
+  // Align with avatar at bottom.
+  --sym-aio-msg-group-content-padding-bottom: var(--sym-aio-avatar-margin-v);
 }

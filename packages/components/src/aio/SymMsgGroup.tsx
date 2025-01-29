@@ -32,7 +32,7 @@ export const SymMsgGroup = ({ msgs }: SymMsgGroupProps) => (
         ))}
     </div>
     <div className="sym-aio-msg-group-overlay-container">
-      <div className="sym-aio-msg-gutter-container" />
+      <div className="sym-aio-msg-gutter-placeholder" />
       <SymAioAvatarContainer />
     </div>
   </div>

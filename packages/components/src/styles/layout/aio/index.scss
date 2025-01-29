@@ -22,9 +22,9 @@
       &-container {
         font-size: var(--sym-aio-msg-header-font-size);
 
-        margin: var(--sym-aio-avatar-margin)
-          var(--sym-aio-msg-header-container-margin) 0
-          var(--sym-aio-msg-header-container-margin);
+        margin: var(--sym-aio-msg-header-container-margin-top)
+          var(--sym-aio-msg-header-container-margin-h) 0
+          var(--sym-aio-msg-header-container-margin-h);
       }
     }
 
@@ -89,7 +89,8 @@
         // Should not use absolute to give group container a proper size
         // position: absolute;
 
-        padding: 0 0 var(--sym-aio-avatar-margin) 0;
+        // Align with avatar at bottom.
+        padding: 0 0 var(--sym-aio-msg-group-content-padding-bottom) 0;
       }
 
       &-container {
@@ -116,18 +117,20 @@
   &-avatar {
     width: var(--sym-aio-avatar-size);
     height: var(--sym-aio-avatar-size);
-    margin: var(--sym-aio-avatar-margin) 0;
+    margin: var(--sym-aio-avatar-margin-v) 0;
 
     position: sticky;
-    top: var(--sym-aio-avatar-margin);
-    bottom: var(--sym-aio-avatar-margin);
+    top: var(--sym-aio-avatar-margin-v);
+    bottom: var(--sym-aio-avatar-margin-v);
 
     background: var(--sym-aio-avatar-background);
 
     &-container {
       width: var(--sym-aio-avatar-container-width);
 
-      margin: var(--sym-aio-msg-header-font-size) 0 0 0;
+      // Avatar margin-v will be sticky,
+      // so container margin (= header font-size) first, then avatar margin-v.
+      margin: var(--sym-aio-avatar-container-margin-top) 0 0 0;
 
       display: flex;
       flex-direction: column;
@@ -139,7 +142,8 @@
     &-placeholder {
       width: var(--sym-aio-avatar-container-width);
 
-      pointer-events: none;
+      // Already at the bottom layer
+      // pointer-events: none;
     }
   }
 }
