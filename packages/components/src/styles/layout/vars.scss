@@ -11,9 +11,14 @@
   // Avatar margin-v will be sticky,
   // so container margin (= header font-size) first, then avatar margin-v.
   --sym-aio-avatar-container-margin-top: var(--sym-aio-msg-header-font-size);
+  --sym-aio-avatar-container-margin-bottom: var(
+    --sym-aio-msg-bubble-margin-bottom
+  );
 
-  --sym-aio-msg-bubble-margin-left: 0px;
+  --sym-aio-msg-bubble-margin-top: 0px;
+  --sym-aio-msg-bubble-margin-right: 0px;
   --sym-aio-msg-bubble-margin-bottom: 2px;
+  --sym-aio-msg-bubble-margin-left: 0px;
   --sym-aio-msg-bubble-padding-top: 8px;
   --sym-aio-msg-bubble-padding-right: 8px;
   --sym-aio-msg-bubble-padding-bottom: 8px;

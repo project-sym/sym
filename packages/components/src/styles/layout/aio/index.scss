@@ -116,6 +116,10 @@
         }
       }
     }
+
+    // &-group-content &-container:last-child &-bubble {
+    //   margin-bottom: 0;
+    // }
   }
 
   &-avatar {
@@ -136,7 +140,8 @@
 
       // Avatar margin-v will be sticky,
       // so container margin (= header font-size) first, then avatar margin-v.
-      margin: var(--sym-aio-avatar-container-margin-top) 0 0 0;
+      margin: var(--sym-aio-avatar-container-margin-top) 0
+        var(--sym-aio-avatar-container-margin-bottom) 0;
 
       display: flex;
       flex-direction: column;
