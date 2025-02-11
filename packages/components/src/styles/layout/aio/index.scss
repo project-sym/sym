@@ -86,6 +86,13 @@
       padding-right: var(--sym-aio-msg-bubble-padding-right);
       padding-bottom: var(--sym-aio-msg-bubble-padding-bottom);
       padding-left: var(--sym-aio-msg-bubble-padding-left);
+
+      &-tail {
+        position: absolute;
+        bottom: -0.5px;
+        inset-inline-start: -9px;
+        fill: var(--sym-aio-msg-bubble-background);
+      }
     }
 
     &-group {
