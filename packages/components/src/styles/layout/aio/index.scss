@@ -87,6 +87,20 @@
       padding-bottom: var(--sym-aio-msg-bubble-padding-bottom);
       padding-left: var(--sym-aio-msg-bubble-padding-left);
 
+      border-start-start-radius: var(--sym-aio-msg-bubble-radius-s);
+      border-start-end-radius: var(--sym-aio-msg-bubble-radius-s);
+      border-end-start-radius: var(--sym-aio-msg-bubble-radius-s);
+      border-end-end-radius: var(--sym-aio-msg-bubble-radius-s);
+
+      &-first {
+        border-start-start-radius: var(--sym-aio-msg-bubble-radius-l);
+      }
+
+      &-last {
+        border-end-start-radius: 0;
+        border-end-end-radius: var(--sym-aio-msg-bubble-radius-l);
+      }
+
       &-tail {
         position: absolute;
         bottom: -0.5px;

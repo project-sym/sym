@@ -1,6 +1,9 @@
 .sym-provider {
   --sym-aio-msg-bubble-background: #00000010;
   --sym-aio-avatar-background: #00000010;
+
+  --sym-aio-msg-bubble-radius-s: 4px;
+  --sym-aio-msg-bubble-radius-l: 8px;
 }
 
 .sym-provider.sym-dark {

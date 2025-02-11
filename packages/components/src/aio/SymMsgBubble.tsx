@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import type { ReactNode } from 'react'
 import { useSymMsgGroupState } from './SymMsgGroup'
 
@@ -6,10 +7,16 @@ export interface SymMsgBubbleProps {
 }
 
 export const SymMsgBubble = ({ children }: SymMsgBubbleProps) => {
-  const { last } = useSymMsgGroupState()
+  const { first, last } = useSymMsgGroupState()
 
   return (
-    <div className="sym-aio-msg-bubble">
+    <div
+      className={clsx({
+        'sym-aio-msg-bubble': true,
+        'sym-aio-msg-bubble-first': first,
+        'sym-aio-msg-bubble-last': last,
+      })}
+    >
       {children}
       {last && (
         <>
