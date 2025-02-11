@@ -13,27 +13,54 @@ export const SymMsgGroupContext = createContext<SymMsgGroupCtx>({
 
 export const useSymMsgGroup = () => useContext(SymMsgGroupContext)
 
+export interface SymMsgGroupStateCtx {
+  first: boolean
+  last: boolean
+}
+
+const SymMsgGroupStateContext = createContext<SymMsgGroupStateCtx>({
+  first: false,
+  last: false,
+})
+
+export const useSymMsgGroupState = () => useContext(SymMsgGroupStateContext)
+
 export interface SymMsgGroupProps {
   msgs: SymAioMsg[]
 }
 
-export const SymMsgGroup = ({ msgs }: SymMsgGroupProps) => (
-  <div className="sym-aio-msg-group-container">
-    <div className="sym-aio-msg-group-content">
-      {msgs[0] && <SymMsg msg={msgs[0]} />}
-      {msgs[1] &&
-        msgs.slice(1).map((x) => (
-          <SymMsg
-            msg={{
-              ...x,
-              symHeader: undefined,
-            }}
-          />
-        ))}
+export const SymMsgGroup = ({ msgs }: SymMsgGroupProps) => {
+  const msgsLen = msgs.length
+
+  return (
+    <div className="sym-aio-msg-group-container">
+      <div className="sym-aio-msg-group-content">
+        {msgs
+          .map((msg, i) => {
+            const result = {
+              msg: {
+                ...msg,
+              },
+              state: {
+                first: i === 0,
+                last: i === msgsLen - 1,
+              },
+            }
+
+            if (!result.state.first) result.msg.symHeader = undefined
+
+            return result
+          })
+          .map((x) => (
+            <SymMsgGroupStateContext value={x.state}>
+              <SymMsg msg={x.msg} />
+            </SymMsgGroupStateContext>
+          ))}
+      </div>
+      <div className="sym-aio-msg-group-overlay-container">
+        <div className="sym-aio-msg-gutter-placeholder" />
+        <SymAioAvatarContainer />
+      </div>
     </div>
-    <div className="sym-aio-msg-group-overlay-container">
-      <div className="sym-aio-msg-gutter-placeholder" />
-      <SymAioAvatarContainer />
-    </div>
-  </div>
-)
+  )
+}
