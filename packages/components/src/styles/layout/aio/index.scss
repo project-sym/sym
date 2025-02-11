@@ -137,10 +137,6 @@
         }
       }
     }
-
-    // &-group-content &-container:last-child &-bubble {
-    //   margin-bottom: 0;
-    // }
   }
 
   &-avatar {
@@ -165,7 +161,7 @@
         var(--sym-aio-avatar-container-margin-bottom) 0;
 
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
 
       pointer-events: all;
