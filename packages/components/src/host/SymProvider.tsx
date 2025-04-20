@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react'
 
 export interface SymProviderProps {
+  className?: string | undefined
   children: ReactNode
 }
 
-export const SymProvider = ({ children }: SymProviderProps) => (
-  <div className="sym-provider" children={children} />
+export const SymProvider = ({ className, children }: SymProviderProps) => (
+  <div className={`sym-provider ${className}`}>{children}</div>
 )
