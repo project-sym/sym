@@ -67,7 +67,9 @@ const fallbackRenderer: SymFRRenderer = (frCtx, element) =>
   render(frCtx, element.children)
 
 export const frRenderers = {
-  text: (_frCtx: FRContext, element: h) => element.toString(),
+  text: ((_frCtx: FRContext, element: h) => [
+    element.toString(),
+  ]) satisfies SymFRRenderer as SymFRRenderer,
   br: directRenderer,
   p: directRenderer,
   a: directRenderer,
