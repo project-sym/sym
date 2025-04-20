@@ -2,6 +2,7 @@ import { createContext, useContext } from 'react'
 import { SymAioAvatarContainer } from './SymAioAvatarContainer'
 import { SymMsg } from './SymMsg'
 import type { SymAioMsg } from './aioMsg'
+import { SymMsgContext } from './aioMsg'
 
 export interface SymMsgGroupCtx {
   group?: boolean | undefined
@@ -59,7 +60,9 @@ export const SymMsgGroup = ({ msgs }: SymMsgGroupProps) => {
       </div>
       <div className="sym-aio-msg-group-overlay-container">
         <div className="sym-aio-msg-gutter-placeholder" />
-        <SymAioAvatarContainer />
+        <SymMsgContext value={msgs[0]!}>
+          <SymAioAvatarContainer />
+        </SymMsgContext>
       </div>
     </div>
   )
