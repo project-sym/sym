@@ -4,6 +4,7 @@ import type { SymAioMsg } from './aioMsg'
 import type { SymFRRenderer } from './SymFR'
 
 export interface SymAioHost {
+  avatarRenderer?: ((msg: SymAioMsg) => ReactNode) | null | undefined
   frRenderers: Record<string, SymFRRenderer>
   frCanRemoveBubble: (result: ReactNode[]) => boolean
 }
