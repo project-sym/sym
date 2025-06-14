@@ -6,5 +6,6 @@ export interface SymProviderProps {
 }
 
 export const SymProvider = ({ className, children }: SymProviderProps) => (
-  <div className={`sym-provider ${className}`}>{children}</div>
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  <div className={`sym-provider ${className || ''}`}>{children}</div>
 )
