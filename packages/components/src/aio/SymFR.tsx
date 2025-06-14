@@ -11,6 +11,10 @@ export interface FRContext {
 }
 
 export type SymFRRenderer = (frCtx: FRContext, element: h) => ReactNode[]
+type SymFRRendererNullable = (
+  frCtx: FRContext,
+  element: h,
+) => ReactNode[] | null
 
 export interface SymFrProps {}
 
@@ -50,21 +54,21 @@ const UNSUPPORTED = ['[不支持的消息]']
 
 const render = (frCtx: FRContext, elements: h[] | undefined): ReactNode[] => {
   if (!elements?.length) return EMPTY
-  return renderIntl(frCtx, elements) || UNSUPPORTED
+  return renderIntl(frCtx, elements) ?? UNSUPPORTED
 }
 
 const renderIntl = (frCtx: FRContext, elements: h[]): ReactNode[] | null => {
   const result = elements.map((element) => visit(frCtx, element))
-  if (result.every((x) => !x)) return null
-  return result.flatMap((x) => x || UNSUPPORTED)
+  if (result.every((x) => x === null)) return null
+  return result.flatMap((x) => x ?? UNSUPPORTED)
 }
 
 const directRenderer: SymFRRenderer = (_frCtx, element) => [
   createElement(element.type, element.attrs),
 ]
 
-const fallbackRenderer: SymFRRenderer = (frCtx, element) =>
-  render(frCtx, element.children)
+const fallbackRenderer: SymFRRendererNullable = (frCtx, element) =>
+  renderIntl(frCtx, element.children)
 
 export const frRenderers = {
   text: ((_frCtx: FRContext, element: h) => [
@@ -79,5 +83,5 @@ export const frRenderers = {
   audio: directRenderer,
 } as const
 
-const visit: SymFRRenderer = (frCtx, element) =>
-  (frCtx.aioHost.frRenderers[element.type] || fallbackRenderer)(frCtx, element)
+const visit: SymFRRendererNullable = (frCtx, element) =>
+  (frCtx.aioHost.frRenderers[element.type] ?? fallbackRenderer)(frCtx, element)
