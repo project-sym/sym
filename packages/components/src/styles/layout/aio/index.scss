@@ -25,10 +25,18 @@
     &-header {
       &-container {
         font-size: var(--sym-aio-msg-header-font-size);
+        font-weight: bold;
 
-        margin: var(--sym-aio-msg-header-container-margin-top)
+        padding: var(--sym-aio-msg-header-container-margin-top)
           var(--sym-aio-msg-header-container-margin-h) 0
           var(--sym-aio-msg-header-container-margin-h);
+
+        .sym-aio-msg-solidheader & {
+          background: var(--sym-aio-msg-bubble-background);
+
+          border-start-start-radius: var(--sym-aio-msg-bubble-radius-l);
+          border-start-end-radius: var(--sym-aio-msg-bubble-radius-l);
+        }
       }
     }
 
@@ -95,6 +103,11 @@
 
       &-first {
         border-start-start-radius: var(--sym-aio-msg-bubble-radius-l);
+
+        .sym-aio-msg-solidheader & {
+          border-start-start-radius: 0;
+          border-start-end-radius: 0;
+        }
       }
 
       &-last {
@@ -143,7 +156,14 @@
   &-avatar {
     width: var(--sym-aio-avatar-size);
     height: var(--sym-aio-avatar-size);
-    margin: var(--sym-aio-avatar-margin-v) 0;
+    margin-top: var(--sym-aio-avatar-margin-v);
+    margin-bottom: var(--sym-aio-avatar-margin-v);
+    margin-left: 0;
+    margin-right: 0;
+
+    .sym-aio-msg-solidheader & {
+      margin-top: 0;
+    }
 
     position: sticky;
     top: var(--sym-aio-avatar-margin-v);
@@ -158,8 +178,14 @@
 
       // Avatar margin-v will be sticky,
       // so container margin (= header font-size) first, then avatar margin-v.
-      margin: var(--sym-aio-avatar-container-margin-top) 0
-        var(--sym-aio-avatar-container-margin-bottom) 0;
+      margin-top: var(--sym-aio-avatar-container-margin-top);
+      margin-bottom: var(--sym-aio-avatar-container-margin-bottom);
+      margin-left: 0;
+      margin-right: 0;
+
+      .sym-aio-msg-solidheader & {
+        margin-top: 0;
+      }
 
       display: flex;
       flex-direction: column-reverse;
