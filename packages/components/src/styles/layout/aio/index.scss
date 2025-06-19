@@ -119,7 +119,7 @@
         position: absolute;
         bottom: -0.5px;
         inset-inline-start: -9px;
-        fill: var(--sym-aio-msg-bubble-background);
+        fill: var(--sym-aio-msg-bubble-tail-color);
       }
     }
 
@@ -188,7 +188,7 @@
       }
 
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: var(--sym-aio-avatar-sticky-direction);
       align-items: center;
 
       pointer-events: all;

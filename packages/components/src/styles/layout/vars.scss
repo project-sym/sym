@@ -39,4 +39,8 @@
 
   // Align with avatar at bottom.
   --sym-aio-msg-group-content-padding-bottom: var(--sym-aio-avatar-margin-v);
+
+  --sym-aio-msg-bubble-tail-color: var(--sym-aio-msg-bubble-background);
+
+  --sym-aio-avatar-sticky-direction: column-reverse;
 }
